@@ -1,0 +1,164 @@
+{
+    "options": {
+        "local": [
+            {
+                "short": "h",
+                "long": "help"
+            },
+            {
+                "short": "V",
+                "long": "version"
+            },
+            {
+                "short": "C",
+                "long": "component",
+                "arguments": ["str"],
+                "requires": ["--version"]
+            }
+        ],
+        "global": [
+            {
+                "short": "v",
+                "long": "verbose"
+            },
+            {
+                "short": "d",
+                "long": "debug"
+            },
+            {
+                "short": "Q",
+                "long": "quiet"
+            },
+            {
+                "short": "H",
+                "long": "handle",
+                "arguments": ["handle:str"],
+                "conflicts": ["--load-auth"]
+            },
+            {
+                "short": "P",
+                "long": "password",
+                "arguments": ["str"],
+                "conflicts": ["--load-auth"]
+            },
+            {
+                "short": "p",
+                "long": "proto",
+                "requires": ["--handle"],
+                "arguments": ["str"]
+            },
+            {
+                "short": "s",
+                "long": "save-auth",
+                "conflicts": ["--load-auth"]
+            },
+            {
+                "short": "L",
+                "long": "load-auth",
+                "conflicts": ["--save-auth"]
+            },
+            {
+                "short": "S",
+                "long": "set-default"
+            },
+            {
+                "short": "D",
+                "long": "use-default",
+                "conflicts": ["--handle"]
+            }
+        ]
+    },
+    "commands": {
+        "post": {
+            "options": {
+                "local": [
+                    {
+                        "short": "m",
+                        "long": "message",
+                        "arguments": ["str"]
+                    },
+                    {
+                        "short": "A",
+                        "long": "aspect",
+                        "arguments": ["str"],
+                        "requires": ["--message"]
+                    },
+                    {
+                        "short": "r",
+                        "long": "read",
+                        "wants": ["--id"],
+                        "conflicts": ["--message"]
+                    },
+                    {
+                        "short": "a",
+                        "long": "also-comments",
+                        "requires": ["--read"]
+                    },
+                    {
+                        "short": "c",
+                        "long": "comment",
+                        "wants": ["--id"],
+                        "conflicts": ["--message"]
+                    },
+                    {
+                        "short": "R",
+                        "long": "reshare",
+                        "wants": ["--id"],
+                        "conflicts": ["--message"]
+                    },
+                    {
+                        "short": "l",
+                        "long": "like",
+                        "wants": ["--id"],
+                        "conflicts": ["--message"]
+                    },
+                    {
+                        "short": "I",
+                        "long": "id",
+                        "arguments": ["str"],
+                        "conflicts": ["--message"]
+                    },
+                    {
+                        "short": "s",
+                        "long": "stdin",
+                        "wants": ["--message","--comment"]
+                    }
+                ]
+            }
+        },
+        "notifs": {
+            "options": {
+                "local": [
+                    {
+                        "short": "l",
+                        "long": "last",
+                        "conflicts": ["--page"]
+                    },
+                    {
+                        "short": "r",
+                        "long": "read"
+                    },
+                    {
+                        "short": "p",
+                        "long": "page",
+                        "arguments": ["int"],
+                        "conflicts": ["--last"]
+                    },
+                    {
+                        "short": "P",
+                        "long": "per-page",
+                        "arguments": ["int"]
+                    },
+                    {
+                        "short": "U",
+                        "long": "unread-only"
+                    }
+                ]
+            }
+        }
+    },
+    "operands": {
+        "no": [0, 0],
+        "help": "Not accept any operands (operands - is that not are options nor they's arguments. They are follows after.)"
+    }
+}
