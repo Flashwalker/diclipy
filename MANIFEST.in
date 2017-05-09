@@ -1,0 +1,3 @@
+include diclipy.py
+include ui.json
+include LICENSE.txt

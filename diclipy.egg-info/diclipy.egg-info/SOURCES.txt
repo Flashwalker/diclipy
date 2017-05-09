@@ -1,0 +1,12 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.py
+diclipy/diclipy.py
+diclipy/ui.json
+diclipy.egg-info/PKG-INFO
+diclipy.egg-info/SOURCES.txt
+diclipy.egg-info/dependency_links.txt
+diclipy.egg-info/entry_points.txt
+diclipy.egg-info/requires.txt
+diclipy.egg-info/top_level.txt
