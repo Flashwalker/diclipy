@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+include LICENSE.txt
+recursive-include diclipy *
+
+=======
+include diclipy.py
+include ui.json
+include LICENSE.txt
+>>>>>>> 85262bc5a694bea316f7d58233e33e1618a871c0

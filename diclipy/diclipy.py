@@ -61,6 +61,7 @@ COMMAND OPTIONS:
                                    (conflicts: --read, --reshare)
                                    if "MESSAGE" = "-" then read data from stdin.
         -A, --aspect <str>      - Aspect id to send post to (default: "public")
+                                   ("public", "all", or aspect id number)
                                    you can find aspect numeric value at your
                                    Diaspora contacts page in aspects links list
                                    e.g.: for 'https://POD/contacts?a_id=1234567'
@@ -172,7 +173,7 @@ import diaspy
 import clap
 
 #__version__ = '0.1.2'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 ##   Debug for clap
 DEBUG = False
