@@ -4,12 +4,9 @@ setup(
     name='diclipy',
     version='0.1.1',
     packages=find_packages(),
-<<<<<<< HEAD
     include_package_data=True,
-=======
->>>>>>> 85262bc5a694bea316f7d58233e33e1618a871c0
     author='uzver',
-    author_email='uzver(@)protonmail.ch',
+    author_email='uzver(at)protonmail.ch',
     url='https://notabug.org/uzver/diclipy',
     license='GNU/GPLv3+',
     description='CLI script for posting/reading on Diaspora* pod written around diaspy API',
