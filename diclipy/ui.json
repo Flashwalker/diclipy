@@ -97,6 +97,7 @@
                     {
                         "short": "c",
                         "long": "comment",
+                        "arguments": ["str"],
                         "wants": ["--id"],
                         "conflicts": ["--message"]
                     },

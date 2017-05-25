@@ -651,15 +651,27 @@ def main():
             post.reshare()
             if verbose: message = 'diclipy: You reshared {0}\'s post!'.format(post.author('name'))
         if '--comment' in optsui:
+            if '--image' in optsui:
+                photo = optsui.get('--image')
+            else: photo = ''
+            text = """{}""".format(optsui.get('--comment')).replace('\\n', '\n')
+            if ('--stdin') in optsui:
+                text += """{}""".format(get_user_input())
+            elif optsui.get('--comment') == '-':
+                text = """{}""".format(get_user_input())
+                if '--stdin' in optsui:
+                    text += """{}""".format(get_user_input())
             ##   Comment on post with given id
-            if '--id' in optsui: pid = optsui.get('--id')
-            post = diaspy.models.Post(connection, pid)
-            if  '--stdin' in optsui:
-                comment = input()
-            else:
-                comment = optsui.get('--comment')
-            post.comment(comment)
-            if verbose: message = 'diclipy: You commented on {0}\'s post!'.format(post.author('name'))
+            if text or photo:
+                if '--id' in optsui: pid = optsui.get('--id')
+                post = diaspy.models.Post(connection, pid)
+                if verbose: print('Commenting ...')
+                comment = post.comment(text)
+                if verbose:
+                    message = 'diclipy: You commented on {0}\'s post!\n'.format(post.author('name')) 
+                    message += '** {0} ({1})\n'.format(post.author('diaspora_id'), post.author('guid'), post, schemed, pid)
+                message += '** post url: {0}/posts/{1}'.format(schemed, pid)
+            else: message = 'diclipy: fatal: Nothing to send'
         if '--like' in optsui:
             ##   like post with given id
             if '--id' in optsui: pid = optsui.get('--id')
@@ -741,7 +753,7 @@ if __name__ == "__main__":
 ###  TODO:
 ##   print commenter guid only if verbose
 ##   use #EDITOR
-##   check comment, photo, reshare, like:
+##   check photo, reshare, like
 ##   'delete',
 ##   'delete_comment',
 ##   'like',
@@ -751,4 +763,5 @@ if __name__ == "__main__":
 ##   cut of plural \n at the end of post/comment
 ##   -Q, --quiet                 - be quiet.
 ##   debug
+##   >&2
 ###
