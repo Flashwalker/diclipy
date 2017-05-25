@@ -172,8 +172,7 @@ import pickle
 import diaspy
 import clap
 
-#__version__ = '0.1.2'
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 ##   Debug for clap
 DEBUG = False
