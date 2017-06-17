@@ -1,4 +1,4 @@
-# diclipy - CLI python script for posting/reading on [Diaspora*](http://diasporafoundation.org) pod written around [diaspy][diaspy] API
+# diclipy - CLI python script for posting/reading/commenting on [Diaspora*](http://diasporafoundation.org) pod written around [Diaspy][diaspy] API
 
 ## Dependencies:
 
@@ -12,8 +12,22 @@ Run `diclipy -h` for help.
 
 Config folder: ~/.diclipy
 
+Doc.: <http://pythonhosted.org/diclipy>
+
 ## Install:
+
+### diclipy:
+
+`sudo pip3 install diclipy`
+
+or:
+
+1. download and unpack this repo
+2. `cd` to folder
+3. `sudo pip3 install .`
+
 ### diaspy:
+
 `sudo pip3 install diaspy-api`
 
 or:
@@ -23,20 +37,12 @@ or:
 3. `sudo pip3 install .`
 
 ### clap:
+
 `sudo pip3 install clap-api`
 
 or:
 
 1. download and unpack [clap][clap] repo
-2. `cd` to folder
-3. `sudo pip3 install .`
-
-### diclipy:
-`sudo pip3 install diclipy`
-
-or:
-
-1. download and unpack this repo
 2. `cd` to folder
 3. `sudo pip3 install .`
 

@@ -1,4 +1,4 @@
-# [diclipy][diclipy] - CLI python script for posting/reading on [Diaspora*](http://diasporafoundation.org) pod written around [diaspy][diaspy] API
+# diclipy - CLI python script for posting/reading/commenting on [Diaspora*](http://diasporafoundation.org) pod written around [Diaspy][diaspy] API
 
 ## Dependencies:
 
@@ -12,8 +12,22 @@ Run `diclipy -h` for help.
 
 Config folder: ~/.diclipy
 
+Doc.: <http://pythonhosted.org/diclipy>
+
 ## Install:
+
+### diclipy:
+
+`sudo pip3 install diclipy`
+
+or:
+
+1. download and unpack this repo
+2. `cd` to folder
+3. `sudo pip3 install .`
+
 ### diaspy:
+
 `sudo pip3 install diaspy-api`
 
 or:
@@ -23,6 +37,7 @@ or:
 3. `sudo pip3 install .`
 
 ### clap:
+
 `sudo pip3 install clap-api`
 
 or:
@@ -31,16 +46,8 @@ or:
 2. `cd` to folder
 3. `sudo pip3 install .`
 
-### diclipy:
-`sudo pip3 install diclipy`
-
-or:
-
-1. download and unpack this repo
-2. `cd` to folder
-3. `sudo pip3 install .`
-
 ## Help:
+
 ```
 SYNTAX:
     diclipy [OPTIONS ...] [COMMAND [COMMAND OPTIONS ...]]
@@ -99,6 +106,7 @@ COMMAND OPTIONS:
                                    (conflicts: --read, --reshare)
                                    if "MESSAGE" = "-" then read data from stdin.
         -A, --aspect <str>      - Aspect id to send post to (default: "public")
+                                   ("public", "all", or aspect id number)
                                    you can find aspect numeric value at your
                                    Diaspora contacts page in aspects links list
                                    e.g.: for 'https://POD/contacts?a_id=1234567'
@@ -119,7 +127,7 @@ COMMAND OPTIONS:
                                    and + system standart input
                                    (requires: --message|--comment).
 
-   notifs:
+   notifs:                      (short for 'notifications')
         -l, --last              - Check your unread notifications.
         -U, --unread-only       - Display only unread notifications.
         -r, --read              - Mark listed notifications as read
@@ -198,6 +206,6 @@ diacli: Copyright Marek Marecki (c) 2013 https://github.com/marekjm/diacli This 
 diclipy: Copyleft uzver(at)protonmail.ch (ɔ) 2017
 ```
 
-[diclipy]: https://notabug.org/uzver/diclipy.git
+[diclipy]: https://notabug.org/uzver/diclipy
 [diaspy]: https://github.com/marekjm/diaspy
 [clap]: https://github.com/marekjm/clap

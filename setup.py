@@ -9,7 +9,7 @@ setup(
     author_email='uzver(at)protonmail.ch',
     url='https://notabug.org/uzver/diclipy',
     license='GNU/GPLv3+',
-    description='CLI script for posting/reading on Diaspora* pod written around diaspy API',
+    description='CLI script for posting/reading/commenting on Diaspora* pod written around Diaspy API',
     long_description = open('README.rst').read(),
     keywords='diaspora diaspy cli social blog network',
     install_requires=['diaspy-api','clap-api'],
