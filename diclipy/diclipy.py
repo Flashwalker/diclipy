@@ -151,9 +151,10 @@ COMMAND OPTIONS:
       READ LAST:
         diclipy notifs --last
         diclipy notifs -l
-      READ LAST 10 PER PAGE:
-        diclipy notifs --page 1 --per-page 10
-        diclipy notifs -p 1 -P 10
+      READ LAST 20 PER PAGE:
+        diclipy notifs --last --per-page 20
+        diclipy notifs --page 2 --per-page 20
+        diclipy notifs -p 12 -P 20
 
 --
 diacli: Copyright Marek Marecki (c) 2013 https://github.com/marekjm/diacli This is free software published under GNU GPL v3 license or any later version of this license.
@@ -172,7 +173,7 @@ import pickle
 import diaspy
 import clap
 
-__version__ = '0.1.2'
+__version__ = '0.1.3'
 
 ##   Debug for clap
 DEBUG = False

@@ -14,6 +14,12 @@
                 "long": "component",
                 "arguments": ["str"],
                 "requires": ["--version"]
+            },
+            {
+                "short": "p",
+                "long": "proto",
+                "requires": ["--handle"],
+                "arguments": ["str"]
             }
         ],
         "global": [
@@ -40,12 +46,6 @@
                 "long": "password",
                 "arguments": ["str"],
                 "conflicts": ["--load-auth"]
-            },
-            {
-                "short": "p",
-                "long": "proto",
-                "requires": ["--handle"],
-                "arguments": ["str"]
             },
             {
                 "short": "s",
