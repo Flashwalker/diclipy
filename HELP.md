@@ -199,7 +199,7 @@ COMMAND OPTIONS:
       READ LAST 20 PER PAGE:
         diclipy notifs --last --per-page 20
         diclipy notifs --page 2 --per-page 20
-        diclipy notifs -p 12 -P 20
+        diclipy notifs -p 2 -P 20
 
 --
 diacli: Copyright Marek Marecki (c) 2013 https://github.com/marekjm/diacli This is free software published under GNU GPL v3 license or any later version of this license.
