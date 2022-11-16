@@ -1,7 +1,7 @@
 Description:
 ------------
 
-`diclipy <https://notabug.org/uzver/diclipy.git>`__ - CLI python script for posting/reading/commenting on `Diaspora\* <http://diasporafoundation.org>`__ pod written around `Diaspy <https://github.com/marekjm/diaspy>`__ API
+`diclipy <https://notabug.org/uzver/diclipy>`__ - CLI python script for posting/reading/commenting on `Diaspora\* <http://diasporafoundation.org>`__ pod written around `Diaspy <https://github.com/marekjm/diaspy>`__ API
 
 Dependencies:
 -------------
@@ -22,36 +22,28 @@ Doc.: http://pythonhosted.org/diclipy
 Install:
 --------
 
-diclipy:
-~~~~~~~~
-
 ``sudo pip3 install diclipy``
 
-or:
-
-1. download and unpack this repo
-2. ``cd`` to folder
-3. ``sudo pip3 install .``
-
-diaspy:
-~~~~~~~
-
-``sudo pip3 install diaspy-api``
-
-or:
-
-1. download and unpack `diaspy <https://github.com/marekjm/diaspy>`__
-   repo
-2. ``cd`` to folder
-3. ``sudo pip3 install .``
+or if you get errors try from git:
 
 clap:
 ~~~~~
 
-``sudo pip3 install clap-api``
+1. download and unpack `clap <https://github.com/marekjm/clap/archive/refs/heads/devel.zip>`__
+2. ``cd`` to ``clap`` folder
+3. ``pip3 install .``
 
-or:
+diaspy:
+~~~~~~~
 
-1. download and unpack `clap <https://github.com/marekjm/clap>`__ repo
-2. ``cd`` to folder
-3. ``sudo pip3 install .``
+1. download and unpack `diaspy <https://github.com/marekjm/diaspy/archive/refs/heads/master.zip>`__
+   repo
+2. ``cd`` to ``diaspy`` folder
+3. ``pip3 install .``
+
+diclipy:
+~~~~~~~~
+
+1. download and unpack `diclipy <https://notabug.org/uzver/diclipy/archive/master.zip>`__
+2. ``cd`` to ``diclipy`` folder
+3. ``pip3 install .``

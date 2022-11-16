@@ -2,16 +2,16 @@ from setuptools import setup, find_packages
 
 setup(
     name='diclipy',
-    version='0.1.3',
+    version='0.1.5',
     packages=find_packages(),
     include_package_data=True,
     author='uzver',
-    author_email='uzver(at)protonmail.ch',
+    author_email='uzver@protonmail.ch',
     url='https://notabug.org/uzver/diclipy',
     license='GNU/GPLv3+',
     description='CLI script for posting/reading/commenting on Diaspora* pod written around Diaspy API',
     long_description = open('README.rst').read(),
-    keywords='diaspora diaspy cli social blog network',
+    keywords='diaspora diaspy cli social blog federative network fediverse',
     install_requires=['diaspy-api','clap-api'],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',

@@ -16,36 +16,32 @@ Doc.: <http://pythonhosted.org/diclipy>
 
 ## Install:
 
-### diclipy:
+`pip3 install diclipy`
 
-`sudo pip3 install diclipy`
-
-or:
-
-1. download and unpack this repo
-2. `cd` to folder
-3. `sudo pip3 install .`
-
-### diaspy:
-
-`sudo pip3 install diaspy-api`
-
-or:
-
-1. download and unpack [diaspy][diaspy] repo
-2. `cd` to folder
-3. `sudo pip3 install .`
+or if you get errors try from git:
 
 ### clap:
 
-`sudo pip3 install clap-api`
+1. download and unpack [clap][clapmaster] repo
+2. `cd` to `clap` folder
+3. `pip3 install .`
 
-or:
+### diaspy:
 
-1. download and unpack [clap][clap] repo
+1. download and unpack [diaspy][diaspymaster] repo
+2. `cd` to `diaspy` folder
+3. `pip3 install .`
+
+### diclipy:
+
+1. download and unpack [this][diclipymaster] repo
 2. `cd` to folder
-3. `sudo pip3 install .`
+3. `pip3 install .`
 
 
+[diclipy]: https://notabug.org/uzver/diclipy
+[diclipymaster]: https://notabug.org/uzver/diclipy/archive/master.zip
 [diaspy]: https://github.com/marekjm/diaspy
+[diaspymaster]: https://github.com/marekjm/diaspy/archive/refs/heads/master.zip
 [clap]: https://github.com/marekjm/clap
+[clapmaster]: https://github.com/marekjm/clap/archive/refs/heads/devel.zip

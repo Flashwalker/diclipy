@@ -159,7 +159,11 @@
         }
     },
     "operands": {
-        "no": [0, 0],
-        "help": "Not accept any operands (operands - is that not are options nor they's arguments. They are follows after.)"
+        "local": [
+            {
+                "no": [0,0],
+                "help": [0,0]
+            }
+        ]
     }
 }
