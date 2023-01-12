@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='diclipy',
-    version='0.1.5',
+    version='0.1.6',
     packages=find_packages(),
     include_package_data=True,
     author='uzver',
@@ -17,7 +17,7 @@ setup(
         'Development Status :: 2 - Pre-Alpha',
         'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.6',
         'Topic :: Internet',
         'Topic :: Utilities'
     ],

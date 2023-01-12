@@ -12,29 +12,27 @@ Run `diclipy -h` for help.
 
 Config folder: ~/.diclipy
 
-Doc.: <http://pythonhosted.org/diclipy>
-
 ## Install:
 
 `pip3 install diclipy`
 
-or if you get errors try from git:
+## If you get errors, install from git:
 
 ### clap:
 
-1. download and unpack [clap][clapmaster] repo
+1. download and unpack [clap][clapmaster] or clone [repo][clap]
 2. `cd` to `clap` folder
 3. `pip3 install .`
 
 ### diaspy:
 
-1. download and unpack [diaspy][diaspymaster] repo
+1. download and unpack [diaspy][diaspymaster] or clone [repo][diaspy]
 2. `cd` to `diaspy` folder
 3. `pip3 install .`
 
 ### diclipy:
 
-1. download and unpack [this][diclipymaster] repo
+1. download and unpack [this][diclipymaster] or clone [repo][diclipy] ([mirror][diclipygh])
 2. `cd` to folder
 3. `pip3 install .`
 
@@ -198,10 +196,11 @@ diacli: Copyright Marek Marecki (c) 2013 https://github.com/marekjm/diacli
  This is free software published under GNU GPL v3 license
  or any later version of this license.
 
-diclipy: Copyleft uzver(at)protonmail.ch (ɔ) 2022
+diclipy: Copyleft uzver(at)protonmail.ch (ɔ) 2022 - till the end of the Universe.
 ```
 
 [diclipy]: https://notabug.org/uzver/diclipy
+[diclipygh]: https://github.com/Flashwalker/diclipy
 [diclipymaster]: https://notabug.org/uzver/diclipy/archive/master.zip
 [diaspy]: https://github.com/marekjm/diaspy
 [diaspymaster]: https://github.com/marekjm/diaspy/archive/refs/heads/master.zip

@@ -161,7 +161,7 @@ diacli: Copyright Marek Marecki (c) 2013 https://github.com/marekjm/diacli
  This is free software published under GNU GPL v3 license
  or any later version of this license.
 
-diclipy: Copyleft uzver(at)protonmail.ch (ɔ) 2022
+diclipy: Copyleft uzver(at)protonmail.ch (ɔ) 2022 - till the end of the Universe.
 """
 
 
@@ -175,10 +175,11 @@ import pickle
 import diaspy
 import clap
 
-__version__ = '0.1.5'
+__version__ = '0.1.6'
 
 ##   Debug for clap
 DEBUG = False
+#DEBUG = True
 
 if DEBUG:
     import errno
@@ -321,6 +322,8 @@ def load_auth():
                     print('Can\'t find saved connection. Will try to get new.')
                     if debug: print('debug: diclipy: load savedconn not success.\n')
             if debug:
+                import errno
+                from pprint import pprint
                 print('debug: type of "savedconn" =', type(savedconn))
                 print('debug: savedconn._login_data =', savedconn._login_data)
                 print('\ndebug: dir(savedconn):')
@@ -611,15 +614,15 @@ def main():
 
             if text or photo:
                 ##   If text or photo is given it will be posted
-                if verbose: print('Posting ...')
+                if verbose: print('Posting...')
                 post = diaspy.streams.Activity(connection).post(text=text, aspect_ids=aspect, photo=photo)
                 if debug:
                     print('debug: post:')
-                    pprint(post.__dict__(), indent=2)
-                    print('\ndebug: post.id:', post['id'])
-                    print('debug: post.guid:', post['guid'].replace('\'', ''))
-                if len(post['guid'].replace('\'', '')) > 2:
-                    pid = post['guid'].replace('\'', '')
+                    pprint(post.__dict__, indent=2)
+                    print('\ndebug: post.id:', post.__dict__['id'])
+                    print('debug: post.guid:', post.__dict__['guid'].replace('\'', ''))
+                if len(post.__dict__['guid'].replace('\'', '')) > 2:
+                    pid = post.__dict__['guid'].replace('\'', '')
                 else: pid = repr(post.id)
                 message = '** post url: {0}/posts/{1}'.format(schemed, pid)
             else: message = 'diclipy: fatal: nothing to post'

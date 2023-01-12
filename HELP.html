@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="retro.css">
+  <title>diclipy doc</title>
+</head>
+<body>
+
+<h1 id="diclipy---cli-python-script-for-postingreadingcommenting-on-diaspora-pod-written-around-diaspydiaspy-api"><a href="https://notabug.org/uzver/diclipy">diclipy</a> - CLI python script for posting/reading/commenting on <a href="http://diasporafoundation.org">Diaspora*</a> pod written around <a href="https://github.com/marekjm/diaspy">Diaspy</a> API</h1>
+<h2 id="dependencies">Dependencies:</h2>
+<ul>
+<li>python3</li>
+<li><a href="https://github.com/marekjm/diaspy">diaspy</a></li>
+<li><a href="https://github.com/marekjm/clap">clap</a></li>
+</ul>
+<h2 id="usage">Usage:</h2>
+<p>Run <code>diclipy -h</code> for help.</p>
+<p>Config folder: ~/.diclipy</p>
+<p>Doc.: <a href="http://pythonhosted.org/diclipy" class="uri">http://pythonhosted.org/diclipy</a></p>
+<h2 id="install">Install:</h2>
+<p><code>pip3 install diclipy</code></p>
+<h2><font color="red">If you get errors,<br> install from git:</font></h2>
+<h3 id="clap">clap:</h3>
+<ol style="list-style-type: decimal">
+<li>download and unpack <a href="https://github.com/marekjm/clap/archive/refs/heads/devel.zip">clap</a> or clone <a href="https://github.com/marekjm/clap">repo</a></li>
+<li><code>cd</code> to <code>clap</code> folder</li>
+<li><code>pip3 install .</code></li>
+</ol>
+<h3 id="diaspy">diaspy:</h3>
+<ol style="list-style-type: decimal">
+<li>download and unpack <a href="https://github.com/marekjm/diaspy/archive/refs/heads/master.zip">diaspy</a> or clone <a href="https://github.com/marekjm/diaspy">repo</a></li>
+<li><code>cd</code> to <code>diaspy</code> folder</li>
+<li><code>pip3 install .</code></li>
+</ol>
+<h3 id="diclipy">diclipy:</h3>
+<ol style="list-style-type: decimal">
+<li>download and unpack <a href="https://notabug.org/uzver/diclipy/archive/master.zip">diclipy</a> or clone <a href="https://notabug.org/uzver/diclipy">repo</a> (<a href="https://github.com/Flashwalker/diclipy">mirror</a>)</li>
+<li><code>cd</code> to folder</li>
+<li><code>pip3 install .</code></li>
+</ol>
+<h2 id="help">Help:</h2>
+<pre><code>SYNTAX:
+    diclipy [OPTIONS ...] [COMMAND [COMMAND OPTIONS ...]]
+
+OPTIONS:
+    -h, --help                  - Display this help.
+    -v, --verbose               - Be verbose.
+    -d, --debug                 - Print a lot of debug scrap
+                                   (WARNING: password too!).
+    -V, --version               - Display version information.
+    -C, --component &lt;str&gt;       - Which component&#39;s version to display:
+                                   ui, backend|diaspy, clap.
+    -Q, --quiet                 - Be quiet.
+
+   LOGIN OPTIONS:
+    -H, --handle HANDLE         - Diaspora* handle (USER@POD) (overrides config)
+                                   (not load saved password).
+    -P, --password PASSWORD     - Specify password.
+    -p, --proto &lt;str&gt;           - Protocol to use (default: &#39;https&#39;).
+    -s, --save-auth             - Store auth data as plain json file
+                                   (~/.diclipy/auth.json).
+    -S, --set-default           - Set default handle (requires: --handle|-H)
+                                   (~/.diclipy/defhandle.json).
+    -L, --load-auth             - Load saved password associated with handle
+                                   being used (default).
+    -D, --use-default           - Use default handle (default)
+                                   (if not set you&#39;ll be asked for login data).
+
+   EXAMPLES:
+     Save auth to file &amp; set default handle:
+       diclipy -sS [...]
+      or:
+       diclipy -sSH USER@POD [...]
+      or:
+       diclipy -sSH USER@POD -P PASSWORD [...]
+      or save only password:
+       diclipy -s [...]
+      or only set default handle:
+       diclipy -S [...]
+
+     Load saved password &amp; use default handle (default):
+       diclipy -LD [...]
+
+     Show version:
+       diclipy -V -C ui
+       diclipy -v -V -C backend
+       diclipy -vVC clap
+
+COMMAND:
+    post                        - operations with posts.
+    notifs                      - operations with notifications.
+
+COMMAND OPTIONS:
+   `post` command options:
+        -m, --message &quot;MESSAGE&quot; - Send post with given message
+                                   (conflicts: --read, --reshare)
+                                   if &quot;MESSAGE&quot; = &quot;-&quot; then read data from stdin.
+        -A, --aspect ID      - Aspect ID to send post to (default: &quot;public&quot;)
+                                   (&quot;public&quot;, &quot;all&quot;, or aspect ID number)
+                                   you can find aspect numeric value at your
+                                   Diaspora contacts page in aspects links list
+                                   e.g.: for &#39;https://POD/contacts?a_id=1234567&#39;
+                                   aspect ID is: &#39;1234567&#39;.
+        -i, --image &quot;PATH&quot;      - Attach image to post.
+        -r, --read              - Read post of given ID (conflicts: --message).
+        -a, --also-comments     - Read also post comments (requires: --read).
+        -R, --reshare           - Reshare post of given ID
+                                   (conflicts: --message).
+        -c, --comment &quot;COMMENT&quot; - Comment the post of given ID
+                                   (conflicts: --message)
+                                   if &quot;COMMENT&quot; = &quot;-&quot; read from stdin.
+        -l, --like              - Like the post of given ID
+                                   (conflicts: --message).
+        -I, --id ID          - Supplies post ID
+                                   (for: --read, --reshare, --comment, --like).
+        -s, --stdin             - Read data from --message|--comment arg
+                                   and + system standart input
+                                   (requires: --message|--comment).
+
+   `notifs` (notifications) command options:
+        -l, --last              - Check your unread notifications.
+        -U, --unread-only       - Display only unread notifications.
+        -r, --read              - Mark listed notifications as read
+                                   (by default notifications are not marked).
+        -p, --page N            - Print N-th page of notifications.
+        -P, --per-page N        - Print N notifications per page.
+
+    EXAMPLES:
+      SEND THE POST:
+        diclipy post -m &quot;MESSAGE&quot;
+        diclipy -H USER@POD -P PASSWORD post -m &quot;MESSAGE&quot;
+        diclipy post -A ASPECT_ID -m &quot;MESSAGE&quot;
+        diclipy post -m &quot;MESSAGE WITH
+         LINE BREAKS,
+         PIC &amp; TAGS
+         ![](PICTURE.JPG)
+         #TAG1 #TAG2 #TAG3&quot;
+
+      SEND THE POST FROM SYSTEM STDIN:
+        diclipy post -m -
+         ... TYPE MESSAGE (multiline acceptably) &amp; PRESS: Ctrl+d
+        diclipy post -sm &#39;&#39;
+         ... TYPE MESSAGE &amp; PRESS: Ctrl+d
+        echo &quot;It&#39;s a post through pipe!&quot; | diclipy post -m -
+        diclipy post -m - &lt;&lt;&lt;&quot;It&#39;s a stdin post again! Whoo!&quot;
+        diclipy post -m - &lt;&lt;EOF
+         It&#39;s a stdin post
+         with line breaks!
+         Yay!
+         EOF
+
+      READ THE POST OF GIVEN ID:
+        diclipy post -rI ID
+
+      READ THE POST OF GIVEN ID + COMMENTS:
+        diclipy post -raI ID
+
+      RESHARE THE POST OF GIVEN ID:
+        diclipy post -RI ID
+
+      LIKE THE POST OF GIVEN ID:
+        diclipy post -lI ID
+
+      COMMENTING POST OF GIVEN ID:
+        diclipy post -I ID -c &quot;COMMENT&quot;
+        diclipy post -I ID -c &quot;COMMENT WITH
+         LINE
+         BREAKS&quot;
+
+      COMMENTING POST OF GIVEN ID FROM SYSTEM STDIN:
+        diclipy post -I ID -c -
+         ... TYPE COMMENT &amp; PRESS: Ctrl+d
+        diclipy post -I ID -sc &#39;&#39;
+         ... TYPE COMMENT &amp; PRESS: Ctrl+d
+        echo &quot;It&#39;s a comment through pipe!&quot; | diclipy post -I ID -c -
+       BE VERBOSE:
+        diclipy -v post -I ID -c - &lt;&lt;&lt;&quot;It&#39;s stdin again!&quot;
+        diclipy -v post -I ID -c - &lt;&lt;EOF
+         It&#39;s a
+         multiline
+         stdin
+         comment!
+         EOF
+
+      READ YOUR UNREAD NOTIFICATIONS:
+       READ LAST:
+        diclipy notifs --last
+        diclipy notifs -l
+       READ LAST 20 PER PAGE:
+        diclipy notifs --last --per-page 20
+        diclipy notifs --page 2 --per-page 20
+        diclipy notifs -p 2 -P 20
+
+--
+diacli: Copyright Marek Marecki (c) 2013 https://github.com/marekjm/diacli
+ This is free software published under GNU GPL v3 license
+ or any later version of this license.
+
+diclipy: Copyleft uzver(at)protonmail.ch (ɔ) 2022 - till the end of the Universe.</code></pre>
+
+</body>
+</html>
