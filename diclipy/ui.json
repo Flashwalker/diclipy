@@ -78,6 +78,11 @@
                         "arguments": ["str"]
                     },
                     {
+                        "short": "i",
+                        "long": "image",
+                        "arguments": ["str"]
+                    },
+                    {
                         "short": "A",
                         "long": "aspect",
                         "arguments": ["str"],
